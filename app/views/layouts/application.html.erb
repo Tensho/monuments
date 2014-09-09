@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<% if session[:id] %>
+    Signed as: <%= User.find(session[:id]).login %>
+    <%= link_to 'Sign Out', session_path(session[:id]), method: :delete %>
+<% end %>
+
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: name %>
 <% end %>
