@@ -9,8 +9,11 @@
 <body>
 
 <% if session[:id] %>
-    Signed as: <%= User.find(session[:id]).login %>
-    <%= link_to 'Sign Out', session_path(session[:id]), method: :delete %>
+  Signed as: <%= User.find(session[:id]).login %>
+  <%= link_to 'Sign Out', session_path(session[:id]), method: :delete %>
+<% else %>
+  <%= link_to 'Sign Up', new_user_path %>
+  <%= link_to 'Sign In', new_session_path %>
 <% end %>
 
 <% flash.each do |name, msg| %>
