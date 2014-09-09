@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to new_session_path, notice: "Successful Sign Up!"
+      session[:id] = @user.id
+      redirect_to :root, notice: "Successful Sign Up!"
     else
       redirect_to :back, alert: "Failed Sign Up!"
     end
