@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to :root, notice: "Welcome to the site!"
+      redirect_to new_session_path, notice: "Successful Sign Up!"
     else
-      redirect_to :back, alert: "There was a problem creating your account. Please try again."
+      redirect_to :back, alert: "Failed Sign Up!"
     end
   end
 

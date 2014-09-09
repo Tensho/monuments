@@ -17,9 +17,9 @@ describe UsersController do
     end
   end
 
-  describe "GET create" do
+  describe "POST create" do
     context "user is valid" do
-      before { get :create, { user: { login: 'abc', password: '123', password_confirmation: '123' } } }
+      before { post :create, { user: { login: 'abc', password: '123', password_confirmation: '123' } } }
 
       it 'saves' do
         expect(User.count).to eq(1)
@@ -33,7 +33,7 @@ describe UsersController do
     context "user is invalid" do
       before do
         request.env["HTTP_REFERER"] = "back"
-        get :create, { user: { login: 'abc', password: '123', password_confirmation: '456' } }
+        post :create, { user: { login: 'abc', password: '123', password_confirmation: '456' } }
       end
 
       it 'saves' do
