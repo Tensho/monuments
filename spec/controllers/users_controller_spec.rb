@@ -33,7 +33,8 @@ describe UsersController do
     context "user is invalid" do
       before do
         request.env["HTTP_REFERER"] = "back"
-        post :create, { user: { login: 'abc', password: '123', password_confirmation: '456' } }
+        post :create, { user: {
+          login: 'abc', password: '123', password_confirmation: '456' } }
       end
 
       it 'saves' do
