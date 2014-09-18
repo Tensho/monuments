@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140918081747) do
   create_table "categories", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
+    t.integer  "monument_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140918081747) do
   create_table "monuments", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "category_id"
+    t.integer  "collection_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

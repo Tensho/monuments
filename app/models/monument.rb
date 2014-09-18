@@ -1,3 +1,4 @@
 class Monument < ActiveRecord::Base
-  belongs_to :category
+  belongs_to :collection
+  has_one :category
 end
