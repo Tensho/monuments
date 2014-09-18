@@ -1,4 +1,4 @@
-<%= form_for(@monument) do |f| %>
+<%= form_for([@collection, @monument]) do |f| %>
   <% if @monument.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@monument.errors.count, "error") %> prohibited this monument from being saved:</h2>
@@ -18,10 +18,6 @@
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

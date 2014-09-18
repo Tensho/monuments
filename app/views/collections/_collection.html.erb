@@ -1,2 +1,11 @@
-<p><%= link_to collection.name, collection_path(collection) %></p>
+<p>
+  <h3>
+    <%= collection.name %>
+    <%= link_to 'Edit', edit_collection_path(collection) %> |
+    <%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </h3>
+  <%= render collection.monuments %>
+  <%= link_to 'New Monument', new_collection_monument_path(collection, collection.monuments.build) %>
+</p>
+
 

@@ -1,0 +1,5 @@
+<p>
+  <%= monument.name %>
+  <%= link_to 'Edit', edit_collection_monument_path(monument.collection, monument) %> |
+  <%= link_to 'Destroy', collection_monument_path(monument.collection, monument), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

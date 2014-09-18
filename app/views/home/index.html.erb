@@ -1,6 +1,6 @@
 <% if current_user %>
   <h1>Collections</h1>
-  <%= render @collections %>
+  <%= render partial: @collections, spacer_template: "collections/collection_ruler" %>
   <%= link_to 'New Collection', new_collection_path %>
 <% else %>
   <h1>Users</h1>
