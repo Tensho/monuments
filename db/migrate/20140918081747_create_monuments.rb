@@ -3,7 +3,7 @@ class CreateMonuments < ActiveRecord::Migration
     create_table :monuments do |t|
       t.string :name
       t.text :description
-      t.references :category, index: true
+      t.references :category
 
       t.timestamps
     end
