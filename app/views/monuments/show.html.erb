@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @monument.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @monument.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @monument.category %>
+</p>
+
+<%= link_to 'Edit', edit_monument_path(@monument) %> |
+<%= link_to 'Back', monuments_path %>
