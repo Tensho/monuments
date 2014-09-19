@@ -1,7 +1,8 @@
 <% if current_user %>
-  <h1>Collections</h1>
-  <%= render partial: @collections, spacer_template: "collections/collection_ruler" %>
-  <%= link_to 'New Collection', new_collection_path %>
+  <h1>Collections <%= link_to 'New Collection', new_collection_path %></h1>
+  <%= render partial: @collections, spacer_template: "shared/ruler" %>
+  <h1>Categories <%= link_to 'New Category', new_category_path %></h1>
+  <%= render partial: @categories, spacer_template: "shared/ruler" %>
 <% else %>
   <h1>Users</h1>
   <%= render @users %>

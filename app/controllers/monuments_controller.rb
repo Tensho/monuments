@@ -42,6 +42,6 @@ class MonumentsController < ApplicationController
     end
 
     def monument_params
-      params.require(:monument).permit(:name, :description)
+      params.require(:monument).permit(:name, :description, :category_id)
     end
 end

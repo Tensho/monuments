@@ -4,6 +4,7 @@ class CreateMonuments < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.references :collection
+      t.references :category
 
       t.timestamps
     end
